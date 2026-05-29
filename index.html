@@ -947,7 +947,7 @@
 <section class="cta-section" id="waitlist-section">
   <h2 data-i18n="cta-title">Join ADAQ — Hire Saudi Arabia's Best Talent</h2>
   <p data-i18n="cta-p">Be among the first 50 companies to access ADAQ before public launch.</p>
-  <form name="waitlist" method="POST" data-netlify="true" class="waitlist-form" id="waitlistForm" onsubmit="submitWaitlist(event)">
+  <form name="waitlist" method="POST" data-emailjs="true" class="waitlist-form" id="waitlistForm" onsubmit="submitWaitlist(event)">
     <input type="hidden" name="form-name" value="waitlist">
     <input type="email" name="email" id="waitlistEmail" placeholder="your@company.com" data-i18n="cta-placeholder" required>
     <button type="submit" data-i18n="cta-btn">Get Early Access</button>
@@ -1197,11 +1197,11 @@ async function submitWaitlist(e) {
   const form  = document.getElementById('waitlistForm');
   const lang  = document.documentElement.lang;
   try {
-    const body = new URLSearchParams({ 'form-name': 'waitlist', email });
-    await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: body.toString()
+    await emailjs.send('service_hkqet08', 'lhofihp', { name: 'New Subscriber', email: email, message: 'New email registration from ADAQ website', title: 'New Registration' });
+    // emailjs handles sending
+      // emailjs handles sending
+      // emailjs handles sending
+      // emailjs handles sending
     });
   } catch(err) {
     // silent fail — Netlify still captures on page load
